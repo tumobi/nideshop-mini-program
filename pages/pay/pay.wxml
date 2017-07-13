@@ -1,0 +1,29 @@
+<view class="container">
+    <view class="total">
+      <view class="label">订单金额</view>
+      <view class="txt">33.80元</view>
+    </view>
+    <view class="pay-list">
+        <view class="h">请选择支付方式</view>
+        <view class="b">
+            <!--<view class="item">
+                <view class="checkbox checked"></view>
+                <view class="icon-alipay"></view>
+                <view class="name">支付宝</view>
+            </view>
+            <view class="item">
+                <view class="checkbox"></view>
+                <view class="icon-net"></view>
+                <view class="name">网易支付</view>
+            </view>-->
+            <view class="item">
+                <view class="checkbox checked"></view>
+                <image src="/static/images/wxpay.png" class="icon"></image>
+                <view class="name">微信支付</view>
+            </view>
+        </view>
+    </view>
+    <view class="tips">小程序只支持微信支付，如需其它支付方式，请在网页版支付</view>
+
+    <view class="pay-btn">确定</view>
+</view>

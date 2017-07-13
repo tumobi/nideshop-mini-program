@@ -1,0 +1,33 @@
+<view class="comments">
+    <view class="h">
+        <view class="item {{ showType == 0 ? 'active' : ''}}" bindtap="switchTab">
+            <view class="txt">全部({{allCount}})</view>
+        </view>
+        <view class="item {{ showType == 0 ? '' : 'active'}}" bindtap="switchTab">
+            <view class="txt">有图({{hasPicCount}})</view>
+        </view>
+    </view>
+  <view class="b">
+    <view class="item" wx:for="{{comments}}" wx:key="{{item.id}}">
+      <view class="info">
+        <view class="user">
+          <image src="http://nos.netease.com/yanxuan/8945ae63d940cc42406c3f67019c5cb6.png"></image>
+          <text>用户名</text>
+        </view>
+        <view class="time">{{item.add_time}}</view>
+      </view>
+      <view class="comment">{{item.content}}</view>
+      <view class="imgs" wx:if="{{item.pic_list.length > 0}}">
+        <image class="img" wx:for="{{item.pic_list}}" wx:key="{{pitem.id}}" wx:for-item="pitem" src="{{pitem.pic_url}}"></image>
+      </view>
+      <view class="spec">
+        <text class="item">白色 2件</text>
+      </view>
+      <!--<view class="customer-service" wx:if="{{item.commentReplyVO}}">
+        <text class="u">小选回复：</text>
+        <text class="c">{{item.commentReplyVO.replyContent}}</text>
+      </view>-->
+    </view>
+
+  </view>
+</view>
