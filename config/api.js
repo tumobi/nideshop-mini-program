@@ -1,9 +1,6 @@
-// var NewApiRootUrl = 'http://192.168.31.116:8360/api/'; 
-var NewApiRootUrl = 'https://nideshop.applinzi.com/api/'; 
+var NewApiRootUrl = 'http://192.168.31.116:8360/api/'; 
 
 module.exports = {
-    //ApiRootUrl: 'http://127.0.0.1:3000/',
-    ApiRootUrl: 'https://youapp.leanapp.cn/',
     IndexUrl: NewApiRootUrl + 'index/index', //首页数据接口
     CatalogList: NewApiRootUrl + 'catalog/index',  //分类目录全部分类数据接口
     CatalogCurrent: NewApiRootUrl + 'catalog/current',  //分类目录当前分类数据接口
