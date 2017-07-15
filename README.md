@@ -20,8 +20,6 @@
 
 ![购物车](http://upload-images.jianshu.io/upload_images/3985656-60ff2307d81f6bb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/320)
 
-![我的](http://upload-images.jianshu.io/upload_images/3985656-92d60f1f23cd4be2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/320)
-
 ![订单中心](http://upload-images.jianshu.io/upload_images/3985656-dff837e6b2ec87b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/320)
 
 
