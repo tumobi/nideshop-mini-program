@@ -1,4 +1,4 @@
-var NewApiRootUrl = 'http://127.0.0.1:8360/api/';
+var NewApiRootUrl = 'http://192.168.31.233:8360/api/';
 
 module.exports = {
     IndexUrl: NewApiRootUrl + 'index/index', //首页数据接口
@@ -40,6 +40,7 @@ module.exports = {
     SearchIndex: NewApiRootUrl + 'search/index',  //搜索页面数据
     SearchResult: NewApiRootUrl + 'search/result',  //搜索数据
     SearchHelper: NewApiRootUrl + 'search/helper',  //搜索帮助
+    SearchClearHistory: NewApiRootUrl + 'search/clearhistory',  //搜索帮助
 
     AddressList: NewApiRootUrl + 'address/list',  //收货地址列表
     AddressDetail: NewApiRootUrl + 'address/detail',  //收货地址详情

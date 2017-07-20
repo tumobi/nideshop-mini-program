@@ -22,10 +22,10 @@ Page({
     categoryId: 0
   },
   //事件处理函数
-  closeSearch: function() {
+  closeSearch: function () {
     wx.navigateBack()
   },
-  clearKeyword: function(){
+  clearKeyword: function () {
     this.setData({
       keyword: '',
       searchStatus: false
@@ -33,6 +33,10 @@ Page({
   },
   onLoad: function () {
 
+    this.getSearchKeyword();
+  },
+
+  getSearchKeyword() {
     let that = this;
     util.request(api.SearchIndex).then(function (res) {
       if (res.errno === 0) {
@@ -44,15 +48,16 @@ Page({
       }
     });
   },
-  inputChange: function(e){
-    
+
+  inputChange: function (e) {
+
     this.setData({
       keyword: e.detail.value,
       searchStatus: false
     });
     this.getHelpKeyword();
   },
-  getHelpKeyword: function(){
+  getHelpKeyword: function () {
     let that = this;
     util.request(api.SearchHelper, { keyword: that.data.keyword }).then(function (res) {
       if (res.errno === 0) {
@@ -62,27 +67,27 @@ Page({
       }
     });
   },
-  inputFocus: function(){
+  inputFocus: function () {
     this.setData({
       searchStatus: false,
       goodsList: []
     });
 
-    if(this.data.keyword){
+    if (this.data.keyword) {
       this.getHelpKeyword();
     }
   },
-  clearHistory: function(){
+  clearHistory: function () {
     this.setData({
       historyKeyword: []
     })
 
-    util.request(api.ApiRootUrl + 'api/goods/search/history/clear', {keyword: '一'}, 'POST')
-    .then(function(res){
+    util.request(api.SearchClearHistory, {}, 'POST')
+      .then(function (res) {
         console.log('清除成功');
-    });
+      });
   },
-  getGoodsList: function(){
+  getGoodsList: function () {
     let that = this;
     util.request(api.GoodsList, { keyword: that.data.keyword, page: that.data.page, size: that.data.size, sort: that.data.currentSortType, order: that.data.currentSortOrder, categoryId: that.data.categoryId }).then(function (res) {
       if (res.errno === 0) {
@@ -95,19 +100,25 @@ Page({
           size: res.data.numsPerPage
         });
       }
+
+      //重新获取关键词
+      that.getSearchKeyword();
     });
   },
-  search: function(event){
+  onKeywordTap: function (event) {
 
+    this.getSearchResult(event.target.dataset.keyword);
+
+  },
+  getSearchResult(keyword) {
     this.setData({
-      keyword: event.target.dataset.keyword,
+      keyword: keyword,
       page: 1,
       categoryId: 0,
-      goodsList:[]
+      goodsList: []
     });
 
     this.getGoodsList();
-    
   },
   openSortFilter: function (event) {
     let currentId = event.currentTarget.id;
@@ -141,15 +152,15 @@ Page({
         this.getGoodsList();
     }
   },
-  selectCategory: function(event){
+  selectCategory: function (event) {
     let currentIndex = event.target.dataset.categoryIndex;
-    let filterCategory = this.data.filterCategory;    
+    let filterCategory = this.data.filterCategory;
     let currentCategory = null;
-    for (let key in filterCategory){
-      if(key == currentIndex){
+    for (let key in filterCategory) {
+      if (key == currentIndex) {
         filterCategory[key].selected = true;
         currentCategory = filterCategory[key];
-      }else{
+      } else {
         filterCategory[key].selected = false;
       }
     }
@@ -162,14 +173,7 @@ Page({
     });
     this.getGoodsList();
   },
-  onKeywordConfirm(event){
-    this.setData({
-      keyword: event.detail.value,
-      page: 1,
-      categoryId: 0,
-      goodsList: []
-    });
-
-    this.getGoodsList();
+  onKeywordConfirm(event) {
+    this.getSearchResult(event.detail.value);
   }
 })
