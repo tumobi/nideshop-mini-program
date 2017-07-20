@@ -1,8 +1,8 @@
-<scroll-view class="container">
+<scroll-view class="container" style="height: 100%;">
   <view class="search-header">
     <view class="input-box">
       <image class="icon" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/search2-2fb94833aa.png"></image>
-      <input name="input" class="keywrod" focus="true" value="{{keyword}}" bindinput="inputChange" bindfocus="inputFocus" confirm-type="search" placeholder="{{defaultKeyword.keyword}}" />
+      <input name="input" class="keywrod" focus="true" value="{{keyword}}" confirm-type="search" bindinput="inputChange" bindfocus="inputFocus" bindconfirm="onKeywordConfirm" confirm-type="search" placeholder="{{defaultKeyword.keyword}}" />
       <image class="del" wx:if="{{keyword}}" bindtap="clearKeyword" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/clearIpt-f71b83e3c2.png"></image>
     </view>
     <view class="right" bindtap="closeSearch">取消</view>

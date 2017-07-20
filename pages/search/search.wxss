@@ -1,3 +1,13 @@
+page{
+  min-height: 100%;
+  background-color: #f4f4f4;
+}
+
+.container{
+  min-height: 100%;
+  background-color: #f4f4f4;
+}
+
 .search-header{
     position: fixed;
     top: 0;
@@ -306,7 +316,6 @@
 .search-result-empty{
     width: 100%;
     height: 100%;
-    background: #fff;
     padding-top: 300rpx;
 }
 
@@ -320,7 +329,7 @@
 .search-result-empty .text{
     display: block;
     width: 100%;
-    height: 30rpx;
+    height: 40rpx;
     font-size: 28rpx;
     text-align: center;
     color: #999;

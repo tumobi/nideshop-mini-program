@@ -162,4 +162,14 @@ Page({
     });
     this.getGoodsList();
   },
+  onKeywordConfirm(event){
+    this.setData({
+      keyword: event.detail.value,
+      page: 1,
+      categoryId: 0,
+      goodsList: []
+    });
+
+    this.getGoodsList();
+  }
 })
