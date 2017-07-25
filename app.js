@@ -1,40 +1,25 @@
 var util = require('./utils/util.js');
 var api = require('./config/api.js');
+var user = require('./services/user.js');
 
 App({
   onLaunch: function () {
-
-    var that = this;
-    that.login();
-  
-  },
-  login: function () {
-    var that = this;
-    wx.login({
-      success: function (res) {
-        wx.getUserInfo({
-          success: function (infoRes) {
-            console.log(res);
-            util.request(api.AuthLogin, { code: res.code , userInfo: infoRes.userInfo}, 'POST')
-              .then(function (res) {
-                wx.setStorageSync('token', res.data.token);
-                wx.setStorageSync('userInfo', res.data.userInfo);
-                that.globalData.userInfo = res.data.userInfo;
-            });
-          }
-        });
-        
-      },
-      fail: function (res) {
-
-      }
+    //获取用户的登录信息
+    user.checkLogin().then(res => {
+      console.log('app login')
+      this.globalData.userInfo = wx.getStorageSync('userInfo');
+      this.globalData.token = wx.getStorageSync('token');
+    }).catch(() => {
+      
     });
   },
+  
   globalData: {
     userInfo: {
-      nickname: '去登录',
-      username: '',
+      nickname: 'Hi,游客',
+      username: '点击去登录',
       avatar: 'http://yanxuan.nosdn.127.net/8945ae63d940cc42406c3f67019c5cb6.png'
-    }
+    },
+    token: '',
   }
 })

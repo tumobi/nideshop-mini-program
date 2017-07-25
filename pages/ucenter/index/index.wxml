@@ -1,5 +1,5 @@
 <view class="container">
-  <view class="profile-info">
+  <view class="profile-info" bindtap="goLogin">
     <image class="avatar" src="{{userInfo.avatar}}"></image>
     <view class="info">
       <text class="name">{{userInfo.nickname}}</text>
