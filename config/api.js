@@ -51,8 +51,6 @@ module.exports = {
 
     RegionList: NewApiRootUrl + 'region/list',  //获取区域列表
 
-    AuthLogin: NewApiRootUrl + 'auth/login',  //微信登录
-
     OrderList: NewApiRootUrl + 'order/list',  //订单列表
     OrderDetail: NewApiRootUrl + 'order/detail',  //订单详情
     OrderCancel: NewApiRootUrl + 'order/cancel',  //取消订单

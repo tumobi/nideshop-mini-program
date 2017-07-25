@@ -15,12 +15,19 @@ Page({
 
   },
   onShow: function () {
+
+    let userInfo = wx.getStorageSync('userInfo');
+    let token = wx.getStorageSync('token');
+
     // 页面显示
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo
-      });
+    if (userInfo && token) {
+      app.globalData.userInfo = userInfo;
+      app.globalData.token = token;
     }
+
+    this.setData({
+      userInfo: app.globalData.userInfo,
+    });
 
   },
   onHide: function () {
