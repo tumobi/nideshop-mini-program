@@ -34,6 +34,7 @@ module.exports = {
 
     CommentList: NewApiRootUrl + 'comment/list',  //评论列表
     CommentCount: NewApiRootUrl + 'comment/count',  //评论总数
+    CommentPost: NewApiRootUrl + 'comment/post',   //发表评论
 
     TopicList: NewApiRootUrl + 'topic/list',  //专题列表
     TopicDetail: NewApiRootUrl + 'topic/detail',  //专题详情
