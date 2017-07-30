@@ -39,7 +39,7 @@ Page({
       // Do something when catch error
     }
 
-    this.getCheckoutInfo();
+    
   },
   getCheckoutInfo: function () {
     let that = this;
@@ -58,6 +58,7 @@ Page({
           orderTotalPrice: res.data.orderTotalPrice
         });
       }
+      wx.hideLoading();
     });
   },
   selectAddress(){
@@ -76,6 +77,10 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    wx.showLoading({
+      title: '加载中...',
+    })
+    this.getCheckoutInfo();
     
   },
   onHide:function(){
