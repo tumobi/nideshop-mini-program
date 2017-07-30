@@ -3,8 +3,8 @@
     <view class="item" wx:for="{{comments}}" wx:key="{{item.id}}">
       <view class="info">
         <view class="user">
-          <image src="http://nos.netease.com/yanxuan/8945ae63d940cc42406c3f67019c5cb6.png"></image>
-          <text>用户名</text>
+          <image src="{{item.user_info.avatar}}"></image>
+          <text>{{item.user_info.nickname}}</text>
         </view>
         <view class="time">{{item.add_time}}</view>
       </view>

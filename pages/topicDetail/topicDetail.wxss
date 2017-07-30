@@ -70,7 +70,8 @@
     font-size: 0;
 }
 
-.comments .user image{
+.comments .user .avatar{
+    display: block;
     float: left;
     width: 67rpx;
     height: 67rpx;
@@ -78,9 +79,10 @@
     border-radius: 50%;
 }
 
-.comments .user text{
-    display: inline-block;
+.comments .user .nickname{
+    display: block;
     width: auto;
+    float: left;
     height: 66rpx;
     overflow: hidden;
     font-size: 29rpx;

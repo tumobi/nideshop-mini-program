@@ -15,8 +15,8 @@
         <view class="item" wx:for="{{commentList}}" wx:key="{{item.id}}">
           <view class="info">
             <view class="user">
-              <image src="{{item.user_info.avatar}}"></image>
-              <text>{{item.user_info.username}}</text>
+              <image class="avatar" src="{{item.user_info.avatar}}"></image>
+              <text class="nickname">{{item.user_info.nickname}}</text>
             </view>
             <view class="time">{{item.add_time}}</view>
           </view>

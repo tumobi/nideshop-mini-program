@@ -2,6 +2,7 @@ var app = getApp();
 var WxParse = require('../../lib/wxParse/wxParse.js');
 var util = require('../../utils/util.js');
 var api = require('../../config/api.js');
+
 Page({
   data: {
     id: 0,
