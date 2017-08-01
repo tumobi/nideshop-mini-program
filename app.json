@@ -16,6 +16,7 @@
     "pages/auth/register/register",
     "pages/auth/reset/reset",
     "pages/pay/pay",
+    "pages/payResult/payResult",
     "pages/ucenter/index/index",
     "pages/topic/topic",
     "pages/comment/comment",

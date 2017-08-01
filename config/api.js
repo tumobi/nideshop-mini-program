@@ -28,6 +28,7 @@ module.exports = {
     CartCheckout: NewApiRootUrl + 'cart/checkout', // 下单前信息确认
 
     OrderSubmit: NewApiRootUrl + 'order/submit', // 提交订单
+    PayPrepayId: NewApiRootUrl + 'pay/pay_prepay', //获取微信统一下单prepay_id
 
     CollectList: NewApiRootUrl + 'collect/list',  //收藏列表
     CollectAddOrDelete: NewApiRootUrl + 'collect/addordelete',  //添加或取消收藏
