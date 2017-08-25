@@ -259,7 +259,7 @@ Page({
     });
   },
   cancelAddress(){
-    wx.navigateTo({
+    wx.reLaunch({
       url: '/pages/shopping/address/address',
     })
   },
@@ -302,7 +302,7 @@ Page({
       is_default: address.is_default,
     }, 'POST').then(function (res) {
       if (res.errno === 0) {
-        wx.navigateTo({
+        wx.reLaunch({
           url: '/pages/shopping/address/address',
         })
       }

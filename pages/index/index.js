@@ -53,16 +53,4 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  onReachBottom: function () {
-
-    if (this.data.bottomLoadDone === true || this.data.bottomLoading === true) {
-      return false;
-    }
-
-    this.setData({
-      bottomLoading: true
-    });
-
-    this.getFloorCategory();
-  }
 })
