@@ -6,6 +6,8 @@
 + 服务端api基于Ｎode.js+ThinkJS+MySQL
 + 计划添加基于Vue.js的后台管理系统、PC版、Ｗap版
 
+**注意：当前版本功能还未完善，请勿商用。**
+
 本项目需要配合NideShop商城服务端使用，GitHub: [https://github.com/tumobi/nideshop](https://github.com/tumobi/nideshop)
 
 ### 项目截图
