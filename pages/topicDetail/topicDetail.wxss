@@ -70,7 +70,8 @@
     font-size: 0;
 }
 
-.comments .user image{
+.comments .user .avatar{
+    display: block;
     float: left;
     width: 67rpx;
     height: 67rpx;
@@ -78,9 +79,10 @@
     border-radius: 50%;
 }
 
-.comments .user text{
-    display: inline-block;
+.comments .user .nickname{
+    display: block;
     width: auto;
+    float: left;
     height: 66rpx;
     overflow: hidden;
     font-size: 29rpx;
@@ -115,66 +117,7 @@
     font-size: 38.5rpx;
 }
 
-.post-comment{
-    display: none;
-    width: 690rpx;
-    height: auto;
-    overflow: hidden;
-    margin-top: 20rpx;
-}
-
-.post-comment .input-box{
-    height: 337.5rpx;
-    width: 690rpx;
-    position: relative;
-}
-
-.post-comment .input-box .content{
-    position: absolute;
-    top:0;
-    left:0;
-    display: block;
-    background:  #f4f4f4;
-    font-size: 29rpx;
-    color: #333;
-    height: 300rpx;
-    width: 650rpx;
-    padding: 20rpx;
-}
-
-.post-comment .input-box .count{
-    position: absolute;
-    bottom:20rpx;
-    right: 20rpx;
-    display: block;
-    height: 30rpx;
-    width: 50rpx;
-    font-size: 29rpx;
-    color: #999;
-}
-
-.post-comment .btns{
-    height: 108rpx;
-}
-
-.post-comment .close{
-    float: left;
-    height: 108rpx;
-    line-height: 108rpx;
-    text-align: left;
-    color: #666;
-}
-
-
-.post-comment .post{
-    float: right;
-    height: 108rpx;
-    line-height: 108rpx;
-    text-align: right;
-}
-
 .no-comments{
-    display: none;
     height: 297rpx;
 }
 

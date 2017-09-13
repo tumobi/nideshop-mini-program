@@ -39,7 +39,7 @@ Page({
       // Do something when catch error
     }
 
-    this.getCheckoutInfo();
+    
   },
   getCheckoutInfo: function () {
     let that = this;
@@ -58,6 +58,7 @@ Page({
           orderTotalPrice: res.data.orderTotalPrice
         });
       }
+      wx.hideLoading();
     });
   },
   selectAddress(){
@@ -76,6 +77,10 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    wx.showLoading({
+      title: '加载中...',
+    })
+    this.getCheckoutInfo();
     
   },
   onHide:function(){
@@ -96,8 +101,8 @@ Page({
     let that = this;
     util.request(api.OrderSubmit, { addressId: that.data.addressId, couponId: that.data.couponId }, 'POST').then(function (res) {
       if (res.errno === 0) {
-        wx.navigateTo({
-          url: '/pages/pay/pay'
+        wx.redirectTo({
+          url: '/pages/pay/pay?orderId=' + res.data.orderInfo.id + '&actualPrice=' + res.data.orderInfo.actual_price
         })
       
       } else {

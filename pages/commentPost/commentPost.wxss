@@ -1,0 +1,63 @@
+page, .container {
+  height: 100%;
+  background: #f4f4f4;
+}
+
+.post-comment {
+  width: 750rpx;
+  height: auto;
+  overflow: hidden;
+  padding: 30rpx;
+}
+
+.post-comment .input-box {
+  height: 337.5rpx;
+  width: 690rpx;
+  position: relative;
+  background: #fff;
+}
+
+.post-comment .input-box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  background: #fff;
+  font-size: 29rpx;
+  color: #333;
+  height: 300rpx;
+  width: 650rpx;
+  padding: 20rpx;
+}
+
+.post-comment .input-box .count {
+  position: absolute;
+  bottom: 20rpx;
+  right: 20rpx;
+  display: block;
+  height: 30rpx;
+  width: 50rpx;
+  font-size: 29rpx;
+  color: #999;
+}
+
+.post-comment .btns {
+  height: 108rpx;
+}
+
+.post-comment .close {
+  float: left;
+  height: 108rpx;
+  line-height: 108rpx;
+  text-align: left;
+  color: #666;
+  padding: 0 30rpx;
+}
+
+.post-comment .post {
+  float: right;
+  height: 108rpx;
+  line-height: 108rpx;
+  text-align: right;
+  padding: 0 30rpx;
+}

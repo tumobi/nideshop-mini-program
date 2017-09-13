@@ -9,7 +9,7 @@
     </swiper-item>
   </swiper>
   <view class="m-menu">
-    <navigator class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
       <image src="{{item.icon_url}}" background-size="cover"></image>
       <text>{{item.name}}</text>
     </navigator>

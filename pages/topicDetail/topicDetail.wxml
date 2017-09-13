@@ -8,60 +8,28 @@
   <scroll-view class="comments">
     <view class="h">
       <text class="t">精选留言</text>
-      <image class="i" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/comment-add-2aca147c3f.png"></image>
+      <image bindtap="postComment" class="i" src="http://nos.netease.com/mailpub/hxm/yanxuan-wap/p/20150730/style/img/icon-normal/comment-add-2aca147c3f.png"></image>
     </view>
-    <view class="post-comment">
-        <view class="input-box">
-            <textarea class="content" placeholder="留言经过筛选后，对所有人可见" />
-            <text class="count">140</text>
-        </view>
-        <view class="btns">
-            <view class="close">取消</view>
-            <view class="post">发表</view>
-        </view>
-    </view>
-    <view class="has-comments">
+     <view class="has-comments" wx:if="{{commentList.length > 0 }}">
       <view class="b">
-        <view class="item">
+        <view class="item" wx:for="{{commentList}}" wx:key="{{item.id}}">
           <view class="info">
             <view class="user">
-              <image src="http://nos.netease.com/mail-online/df67755516bdeea4dbe4e994e8a0af4c/mail180x180.jpg"></image>
-              <text>h****a</text>
+              <image class="avatar" src="{{item.user_info.avatar}}"></image>
+              <text class="nickname">{{item.user_info.nickname}}</text>
             </view>
-            <view class="time">2016-10-25 11:39:49</view>
+            <view class="time">{{item.add_time}}</view>
           </view>
           <view class="comment">
-            第一次知道环保袋原来有这么多讲究！
-          </view>
-        </view>
-        <view class="item">
-          <view class="info">
-            <view class="user">
-              <image src="http://nos.netease.com/mail-online/df67755516bdeea4dbe4e994e8a0af4c/mail180x180.jpg"></image>
-              <text>h****a</text>
-            </view>
-            <view class="time">2016-10-25 11:39:49</view>
-          </view>
-          <view class="comment">
-            第一次知道环保袋原来有这么多讲究！话说一个环保袋能用131次，起码得用上一年，不够耐看就算再耐用也会厌吧😂😂还好这两款看起来都超好搭的样子！
-          </view>
-        </view>
-        <view class="item">
-          <view class="info">
-            <view class="user">
-              <image src="http://nos.netease.com/mail-online/df67755516bdeea4dbe4e994e8a0af4c/mail180x180.jpg"></image>
-              <text>h****a</text>
-            </view>
-            <view class="time">2016-10-25 11:39:49</view>
-          </view>
-          <view class="comment">
-            第一次知道环保袋原来有这么多讲究！话说一个环保袋能用131次，起码得用上一年，不够耐看就算再耐用也会厌吧😂😂还好这两款看起来都超好搭的样子！
+            {{item.content}}
           </view>
         </view>
       </view>
-      <view class="load">查看更多</view>
-    </view>
-    <view class="no-comments">
+      <view class="load" wx:if="{{commentCount > 5}}">
+        <navigator url="/pages/topicComment/topicComment?valueId={{topic.id}}&typeId=1">查看更多</navigator>
+      </view>
+    </view> 
+    <view class="no-comments" wx:if="{{commentList.length <= 0}}">
         <view class="b">    
             <image class="icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/no-comment-560f87660a.png"></image>
             <text class="txt">等你来留言</text>

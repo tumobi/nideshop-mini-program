@@ -1,6 +1,5 @@
 {
-  "pages":[
-    
+  "pages": [
     "pages/index/index",
     "pages/catalog/catalog",
     "pages/newGoods/newGoods",
@@ -17,9 +16,12 @@
     "pages/auth/register/register",
     "pages/auth/reset/reset",
     "pages/pay/pay",
+    "pages/payResult/payResult",
     "pages/ucenter/index/index",
     "pages/topic/topic",
     "pages/comment/comment",
+    "pages/commentPost/commentPost",
+    "pages/topicComment/topicComment",
     "pages/brand/brand",
     "pages/brandDetail/brandDetail",
     "pages/search/search",
@@ -27,15 +29,15 @@
     "pages/cart/cart",
     "pages/shopping/checkout/checkout",
     "pages/shopping/address/address",
-    "pages/shopping/addressAdd/addressAdd",        
+    "pages/shopping/addressAdd/addressAdd",
     "pages/goods/goods",
     "pages/topicDetail/topicDetail"
   ],
-  "window":{
-    "backgroundTextStyle":"dark",
+  "window": {
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "仿网易严选",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": "true"
   },
   "tabBar": {
@@ -43,32 +45,38 @@
     "borderStyle": "white",
     "selectedColor": "#b4282d",
     "color": "#666",
-    "list": [{
-      "pagePath": "pages/index/index",
-      "iconPath": "static/images/ic_menu_choice_nor.png",
-      "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
-      "text": "首页"
-    }, {
-      "pagePath": "pages/topic/topic",
-      "iconPath": "static/images/ic_menu_topic_nor.png",
-      "selectedIconPath": "static/images/ic_menu_topic_pressed.png",
-      "text": "专题"
-    }, {
-      "pagePath": "pages/catalog/catalog",
-      "iconPath": "static/images/ic_menu_sort_nor.png",
-      "selectedIconPath": "static/images/ic_menu_sort_pressed.png",
-      "text": "分类"
-    }, {
-      "pagePath": "pages/cart/cart",
-      "iconPath": "static/images/ic_menu_shoping_nor.png",
-      "selectedIconPath": "static/images/ic_menu_shoping_pressed.png",
-      "text": "购物车"
-    },  {
-      "pagePath": "pages/ucenter/index/index",
-      "iconPath": "static/images/ic_menu_me_nor.png",
-      "selectedIconPath": "static/images/ic_menu_me_pressed.png",
-      "text": "我的"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/images/ic_menu_choice_nor.png",
+        "selectedIconPath": "static/images/ic_menu_choice_pressed.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/topic/topic",
+        "iconPath": "static/images/ic_menu_topic_nor.png",
+        "selectedIconPath": "static/images/ic_menu_topic_pressed.png",
+        "text": "专题"
+      },
+      {
+        "pagePath": "pages/catalog/catalog",
+        "iconPath": "static/images/ic_menu_sort_nor.png",
+        "selectedIconPath": "static/images/ic_menu_sort_pressed.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "iconPath": "static/images/ic_menu_shoping_nor.png",
+        "selectedIconPath": "static/images/ic_menu_shoping_pressed.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/ucenter/index/index",
+        "iconPath": "static/images/ic_menu_me_nor.png",
+        "selectedIconPath": "static/images/ic_menu_me_pressed.png",
+        "text": "我的"
+      }
+    ]
   },
   "networkTimeout": {
     "request": 10000,

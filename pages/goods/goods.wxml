@@ -46,7 +46,7 @@
           <view class="info">
             <view class="user">
               <image src="{{comment.data.avatar}}"></image>
-              <text>{{comment.data.username}}</text>
+              <text>{{comment.data.nickname}}</text>
             </view>
             <view class="time">{{comment.data.add_time}}</view>
           </view>
@@ -56,7 +56,7 @@
           <view class="imgs" wx:if="{{comment.data.pic_list.length > 0}}">
             <image class="img"  wx:for="{{comment.data.pic_list}}" wx:key="{{item.id}}" src="{{item.pic_url}}"></image>
           </view>
-          <view class="spec">白色 2件</view>
+          <!-- <view class="spec">白色 2件</view> -->
         </view>
       </view>
     </view>
@@ -70,10 +70,10 @@
       </view>
     </view>
 
-    <!--<view class="detail">
+    <view class="detail">
       <import src="../../lib/wxParse/wxParse.wxml" />
       <template is="wxParse" data="{{wxParseData:goodsDetail.nodes}}" />
-    </view>-->
+    </view>
 
 
     <view class="common-problem">

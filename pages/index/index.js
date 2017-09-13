@@ -1,7 +1,9 @@
-var util = require('../../utils/util.js');
-var api = require('../../config/api.js');
+const util = require('../../utils/util.js');
+const api = require('../../config/api.js');
+const user = require('../../services/user.js');
+
 //获取应用实例
-var app = getApp()
+const app = getApp()
 Page({
   data: {
     newGoods: [],
@@ -14,7 +16,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: 'YouApp',
+      title: 'NideShop',
       desc: '仿网易严选微信小程序商城',
       path: '/pages/index/index'
     }
@@ -23,8 +25,7 @@ Page({
   getIndexData: function () {
     let that = this;
     util.request(api.IndexUrl).then(function (res) {
-      if(res.errno === 0) {
-        console.log(res.data);
+      if (res.errno === 0) {
         that.setData({
           newGoods: res.data.newGoodsList,
           hotGoods: res.data.hotGoodsList,
@@ -38,9 +39,7 @@ Page({
     });
   },
   onLoad: function (options) {
-
     this.getIndexData();
-
   },
   onReady: function () {
     // 页面渲染完成
@@ -54,16 +53,4 @@ Page({
   onUnload: function () {
     // 页面关闭
   },
-  onReachBottom: function () {
-
-    if (this.data.bottomLoadDone === true || this.data.bottomLoading === true) {
-      return false;
-    }
-
-    this.setData({
-      bottomLoading: true
-    });
-
-    this.getFloorCategory();
-  }
 })
