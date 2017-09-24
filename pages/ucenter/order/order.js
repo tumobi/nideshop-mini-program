@@ -21,9 +21,9 @@ Page({
       }
     });
   },
-  payOrder(){
+  payOrder(event){
     wx.redirectTo({
-      url: '/pages/pay/pay',
+      url: '/pages/pay/pay?orderID='+event.target.dataset.orderId+'&actualPrice='+event.target.dataset.acutalPrice,
     })
   },
   onReady:function(){

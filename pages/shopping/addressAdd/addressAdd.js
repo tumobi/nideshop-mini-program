@@ -12,7 +12,7 @@ Page({
       full_region: '',
       name: '',
       mobile: '',
-      is_default: 0
+      is_default: 1
     },
     addressId: 0,
     openSelectRegion: false,
@@ -146,7 +146,7 @@ Page({
     this.setData({
       regionType: regionTypeIndex + 1
     })
-    
+
     let selectRegionItem = selectRegionList[regionTypeIndex];
 
     this.getRegionList(selectRegionItem.parent_id);
@@ -291,7 +291,7 @@ Page({
 
 
     let that = this;
-    util.request(api.AddressSave, { 
+    util.request(api.AddressSave, {
       id: address.id,
       name: address.name,
       mobile: address.mobile,
@@ -303,7 +303,7 @@ Page({
     }, 'POST').then(function (res) {
       if (res.errno === 0) {
         wx.reLaunch({
-          url: '/pages/shopping/address/address',
+          url: '/pages/shopping/checkout/checkout',
         })
       }
     });
