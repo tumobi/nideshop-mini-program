@@ -1,10 +1,11 @@
 var util = require('../../../utils/util.js');
 var api = require('../../../config/api.js');
+const pay = require('../../../services/pay.js');
 
 var app = getApp();
 
 Page({
-  data:{
+  data: {
     checkedGoodsList: [],
     checkedAddress: {},
     checkedCoupon: [],
@@ -17,7 +18,7 @@ Page({
     addressId: 0,
     couponId: 0
   },
-  onLoad:function(options){
+  onLoad: function (options) {
 
     // 页面初始化 options为页面跳转所带来的参数
 
@@ -39,11 +40,11 @@ Page({
       // Do something when catch error
     }
 
-    
+
   },
   getCheckoutInfo: function () {
     let that = this;
-    util.request(api.CartCheckout, { addressId: that.data.addressId, couponId: that.data.couponId}).then(function (res) {
+    util.request(api.CartCheckout, { addressId: that.data.addressId, couponId: that.data.couponId }).then(function (res) {
       if (res.errno === 0) {
         console.log(res.data);
         that.setData({
@@ -61,7 +62,7 @@ Page({
       wx.hideLoading();
     });
   },
-  selectAddress(){
+  selectAddress() {
     wx.navigateTo({
       url: '/pages/shopping/address/address',
     })
@@ -71,45 +72,46 @@ Page({
       url: '/pages/shopping/addressAdd/addressAdd',
     })
   },
-  onReady:function(){
+  onReady: function () {
     // 页面渲染完成
-    
+
   },
-  onShow:function(){
+  onShow: function () {
     // 页面显示
     wx.showLoading({
       title: '加载中...',
     })
     this.getCheckoutInfo();
-    
-  },
-  onHide:function(){
-    // 页面隐藏
-    
-  },
-  onUnload:function(){
-    // 页面关闭
-    
-  },
-  submitOrder: function(){
 
-    if (this.data.addressId <=0) {
+  },
+  onHide: function () {
+    // 页面隐藏
+
+  },
+  onUnload: function () {
+    // 页面关闭
+
+  },
+  submitOrder: function () {
+    if (this.data.addressId <= 0) {
       util.showErrorToast('请选择收货地址');
       return false;
     }
-
-    let that = this;
-    util.request(api.OrderSubmit, { addressId: that.data.addressId, couponId: that.data.couponId }, 'POST').then(function (res) {
+    util.request(api.OrderSubmit, { addressId: this.data.addressId, couponId: this.data.couponId }, 'POST').then(res => {
       if (res.errno === 0) {
-        wx.redirectTo({
-          url: '/pages/pay/pay?orderId=' + res.data.orderInfo.id + '&actualPrice=' + res.data.orderInfo.actual_price
-        })
-      
+        const orderId = res.data.orderInfo.id;
+        pay.payOrder(parseInt(orderId)).then(res => {
+          wx.redirectTo({
+            url: '/pages/payResult/payResult?status=1&orderId=' + orderId
+          });
+        }).catch(res => {
+          wx.redirectTo({
+            url: '/pages/payResult/payResult?status=0&orderId=' + orderId
+          });
+        });
       } else {
-        util.showErrorToast(res.data.errmsg);
+        util.showErrorToast('下单失败');
       }
     });
-
-   
   }
 })
