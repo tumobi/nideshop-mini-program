@@ -15,7 +15,7 @@
       </view>
       <view class="btns">
         <navigator class="btn" url="/pages/ucenter/order/order" open-type="redirect">查看订单</navigator>
-        <navigator class="btn" url="/pages/pay/pay" open-type="redirect">重新付款</navigator>
+        <view class="btn" bindtap='payOrder'>重新付款</view>
       </view>
     </view>
   </view>
