@@ -30,7 +30,7 @@ Page({
           newGoods: res.data.newGoodsList,
           hotGoods: res.data.hotGoodsList,
           topics: res.data.topicList,
-          brand: res.data.brandList,
+          brands: res.data.brandList,
           floorGoods: res.data.categoryList,
           banner: res.data.banner,
           channel: res.data.channel
