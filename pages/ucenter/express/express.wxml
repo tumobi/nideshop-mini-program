@@ -1,0 +1,22 @@
+<view class="container">
+  <view class='express-header'>
+    <view class="left">
+      <view class="txt">物流单号：{{expressInfo.logistic_code}}</view>
+      <view class="txt">物流公司：{{expressInfo.shipper_name}}</view>
+      <view class="txt">更新时间：{{expressInfo.request_time}}</view>
+    </view>
+    <view class='right' wx:if="{{expressInfo.isFinish === 1}}">
+      <view class='update-btn' bindtap="updateExpress">更新物流</view>
+    </view>
+  </view>
+  <view class='express-body'>
+    <view class='current-icon'></view>
+    <view class="express-item item-{{index}}" wx:for="{{expressTraces}}" wx:key="{{key}}">
+      <view class='left'></view>
+      <view class='right'>
+        <view class="info">{{item.content}}</view>
+        <view class="time">{{item.datetime}}</view>
+      </view>
+    </view>
+  </view>
+</view>
