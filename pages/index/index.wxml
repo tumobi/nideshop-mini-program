@@ -21,7 +21,7 @@
       </navigator>
     </view>
     <view class="b">
-      <view class="item item-1" wx:for="{{brand}}" wx:key="item.id">
+      <view class="item item-1" wx:for="{{brands}}" wx:key="item.id">
         <navigator url="/pages/brandDetail/brandDetail?id={{item.id}}">
           <view class="wrap">
             <image class="img" src="{{item.new_pic_url}}" mode="aspectFill"></image>
