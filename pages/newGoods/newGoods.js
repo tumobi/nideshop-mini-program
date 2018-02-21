@@ -19,7 +19,7 @@ Page({
   },
   getData: function () {
     let that = this;
-    util.request(api.GoodsHot).then(function (res) {
+    util.request(api.GoodsNew).then(function (res) {
       if (res.errno === 0) {
         that.setData({
           bannerInfo: res.data.bannerInfo,
