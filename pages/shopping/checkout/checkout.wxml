@@ -13,7 +13,7 @@
                 <image src="/static/images/address_right.png"></image>
             </view>
         </view>
-        <view class="address-item address-empty" bindtap="addAddress" wx:if="{{checkedAddress.id <= 0}}">
+        <view class="address-item address-empty" bindtap="addAddress" wx:if="{{checkedAddress.id == undefined}}">
             <view class="m">
                还没有收货地址，去添加
             </view>
