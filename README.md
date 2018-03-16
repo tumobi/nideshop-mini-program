@@ -87,6 +87,6 @@
 项目地址：https://github.com/tumobi/nideshop
 
 ### 最后
-喜欢别忘了Star
-本项目长期更新完善，欢迎Watch
-交流QQ群：497145766
++ 喜欢别忘了 Star
++ 微信号 tumobi
++ 交流 QQ 群：497145766
