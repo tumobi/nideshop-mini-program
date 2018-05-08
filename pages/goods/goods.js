@@ -263,6 +263,11 @@ Page({
 
       //提示选择完整规格
       if (!this.isCheckedAllSpec()) {
+        wx.showToast({
+          image: '/static/images/icon_error.png',
+          title: '请选择规格',
+          mask: true
+        });
         return false;
       }
 
@@ -270,12 +275,22 @@ Page({
       let checkedProduct = this.getCheckedProductItem(this.getCheckedSpecKey());
       if (!checkedProduct || checkedProduct.length <= 0) {
         //找不到对应的product信息，提示没有库存
+        wx.showToast({
+          image: '/static/images/icon_error.png',
+          title: '库存不足',
+          mask: true
+        });
         return false;
       }
 
       //验证库存
       if (checkedProduct.goods_number < this.data.number) {
         //找不到对应的product信息，提示没有库存
+        wx.showToast({
+          image: '/static/images/icon_error.png',
+          title: '库存不足',
+          mask: true
+        });
         return false;
       }
 
