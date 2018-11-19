@@ -9,45 +9,53 @@ page{
     overflow: hidden;
     width: 100%;
 }
-.profile-info{
-    width: 100%;
-    height: 280rpx;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 30.25rpx;
-    background: #333;
+.profile-info {
+  width: 100%;
+  height: 280rpx;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 30.25rpx;
+  background: #333;
 }
 
-.profile-info .avatar{
-    height: 148rpx;
-    width: 148rpx;
-    border-radius: 50%;
+.profile-info .avatar {
+  height: 148rpx;
+  width: 148rpx;
+  border-radius: 50%;
+  border: 4rpx solid #fff;
 }
 
-.profile-info .info{
-    flex: 1;
-    height: 85rpx;
-    padding-left: 31.25rpx;
+.profile-info .info {
+  flex: 1;
+  height: 85rpx;
+  margin-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.profile-info .name{
-    display: block;
-    height: 45rpx;
-    line-height: 45rpx;
-    color: #fff;
-    font-size: 37.5rpx;
-    margin-bottom: 10rpx;
+.profile-info .name {
+  height: 45rpx;
+  line-height: 45rpx;
+  color: #fff;
+  font-size: 37.5rpx;
 }
 
-.profile-info .level{
-    display: block;
-    height: 30rpx;
-    line-height: 30rpx;
-    margin-bottom: 10rpx;
-    color: #7f7f7f;
-    font-size: 30rpx;
+.profile-info .level {
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 10rpx;
+  color: #7f7f7f;
+  font-size: 30rpx;
+}
+
+.profile-info .btn {
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 10rpx;
+  border-radius: 50%;
 }
 
 .user-menu{
@@ -149,4 +157,41 @@ page{
     background: #fff;
     color: #333;
     font-size: 30rpx;
+}
+
+
+.dialog-login{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.dialog-login .dialog-body{
+  width: 540rpx;
+  height: auto;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 5px;
+  padding: 40rpx;
+}
+
+.dialog-login .dialog-body .title{
+  width: 100%;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.dialog-login .dialog-body .content{
+  width: 100%;
+}
+
+.dialog-login .dialog-body button{
+  margin-top: 30rpx;
 }
