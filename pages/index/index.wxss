@@ -286,6 +286,8 @@
   width: 750rpx;
   height: auto;
   overflow: hidden;
+  background: #fff;
+  margin-top: 20rpx;
 }
 
 .good-grid .h {
@@ -300,81 +302,47 @@
 
 .good-grid .b {
   width: 750rpx;
-  padding: 0 6.25rpx;
   height: auto;
   overflow: hidden;
+  padding: 0 20rpx;
 }
 
 .good-grid .b .item {
+  display: block;
   float: left;
-  background: #fff;
-  width: 365rpx;
-  margin-bottom: 6.25rpx;
-  height: 452rpx;
+  width: 345rpx;
+  margin-bottom: 30rpx;
+  height: auto;
   overflow: hidden;
   text-align: center;
 }
 
-.good-grid .b .item .a{
-  height: 452rpx;
-  width: 100%;
-}
-
-.good-grid .b .item-b {
-  margin-left: 6.25rpx;
+.good-grid .b .item:nth-child(2n + 1) {
+  margin-right: 20rpx;
 }
 
 .good-grid .item .img {
-  margin-top: 20rpx;
-  width: 302rpx;
-  height: 302rpx;
+  width: 345rpx;
+  height: 345rpx;
+  background: #f8f8f8;
+  margin-bottom: 10rpx;
 }
 
 .good-grid .item .name {
-  display: block;
-  width: 365.625rpx;
-  padding: 0 20rpx;
+  width: 100%;
   overflow: hidden;
-  height: 35rpx;
-  margin: 11.5rpx 0 22rpx 0;
+  height: 40rpx;
+  line-height: 40rpx;
   text-align: center;
   font-size: 30rpx;
   color: #333;
 }
 
 .good-grid .item .price {
-  display: block;
-  width: 365.625rpx;
-  height: 30rpx;
+  width: 100%;
+  height: 46rpx;
+  line-height: 46rpx;
   text-align: center;
   font-size: 30rpx;
   color: #b4282d;
-}
-
-.good-grid .more-item{
-  height: 100%;
-  width: 100%;
-}
-
-.more-a{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.good-grid .more-a .txt{
-  height: 33rpx;
-  width: 100%;
-  line-height: 33rpx;
-  color: #333;
-  font-size: 33rpx;
-}
-
-.good-grid .more-a .icon{
-  margin: 60rpx auto 0 auto;
-  width: 70rpx;
-  height: 70rpx;
 }

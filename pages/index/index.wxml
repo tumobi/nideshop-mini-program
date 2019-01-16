@@ -107,20 +107,12 @@
     </view>
     <view class="b">
       <block wx:for="{{item.goodsList}}" wx:for-index="iindex" wx:for-item="iitem" wx:key="{{iitem.id}}">
-        <view class="item {{iindex % 2 == 0 ? '' : 'item-b'}}">
-          <navigator url="../goods/goods?id={{iitem.id}}" class="a">
-            <image class="img" src="{{iitem.list_pic_url}}" background-size="cover"></image>
-            <text class="name">{{iitem.name}}</text>
-            <text class="price">￥{{iitem.retail_price}}</text>
-          </navigator>
-        </view>
+        <navigator url="../goods/goods?id={{iitem.id}}" class="item">
+          <image class="img" src="{{iitem.list_pic_url}}" background-size="cover"></image>
+          <view class="name">{{iitem.name}}</view>
+          <view class="price">￥{{iitem.retail_price}}</view>
+        </navigator>
       </block>
-      <view class="item item-b item-more">
-          <navigator url="/pages/category/category?id={{item.id}}" class="more-a">
-            <view class="txt">{{'更多'+item.name+'好物'}}</view>
-            <image class="icon" src="../../static/images/icon_go_more.png" background-size="cover"></image>
-          </navigator>
-      </view>
     </view>
   </view>
 </view>
