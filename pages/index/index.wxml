@@ -1,6 +1,11 @@
-
 <!--index.wxml-->
 <view class="container">
+  <view class="search">
+    <navigator url="/pages/search/search" class="input">
+      <image class="icon"></image>
+      <text class="txt">商品搜索, 共{{goodsCount}}款好物</text>
+    </navigator>
+  </view>
   <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
     <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
       <navigator url="{{item.link}}">
@@ -9,7 +14,7 @@
     </swiper-item>
   </swiper>
   <view class="m-menu">
-    <navigator  class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
+    <navigator class="item" url="{{item.url}}" wx:for="{{channel}}" wx:key="{{item.id}}">
       <image src="{{item.icon_url}}" background-size="cover"></image>
       <text>{{item.name}}</text>
     </navigator>
@@ -79,8 +84,8 @@
   <view class="a-section a-topic" wx:if="topics.length > 0">
     <view class="h">
       <view>
-      <navigator url="../topic/topic" open-type="switchTab">
-        <text class="txt">专题精选</text>
+        <navigator url="../topic/topic" open-type="switchTab">
+          <text class="txt">专题精选</text>
         </navigator>
       </view>
     </view>
