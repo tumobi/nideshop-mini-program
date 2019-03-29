@@ -152,6 +152,6 @@
       <image bindtap="openCartPage" class="icon" src="/static/images/ic_menu_shoping_nor.png"></image>
     </view>
   </view>
-  <view class="c">立即购买</view>
+  <view class="c" bindtap="onBuy">立即购买</view>
   <view class="r" bindtap="addToCart">加入购物车</view>
 </view>
