@@ -252,7 +252,7 @@ Page({
       url: '/pages/cart/cart',
     });
   },
-  addToCart: function () {
+  addToCart: function (cb) {
     var that = this;
     if (this.data.openAttr === false) {
       //打开规格选择窗口
@@ -305,6 +305,8 @@ Page({
             that.setData({
               openAttr: !that.data.openAttr,
               cartGoodsCount: _res.data.cartTotal.goodsCount
+            }, function() {
+              cb && cb();
             });
           } else {
             wx.showToast({
@@ -317,6 +319,13 @@ Page({
         });
     }
 
+  },
+  onBuy: function() {
+    this.addToCart(() => {
+      wx.navigateTo({
+        url: '../shopping/checkout/checkout'
+      })
+    })
   },
   cutNumber: function () {
     this.setData({
