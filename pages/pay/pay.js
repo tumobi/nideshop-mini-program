@@ -37,18 +37,18 @@ Page({
         let payParam = res.data;
         wx.requestPayment({
           'timeStamp': payParam.timeStamp,
-          'nonceStr': payParam.timeStamp,
-          'package': payParam.nonceStr,
+          'nonceStr': payParam.nonceStr,
+          'package': payParam.package,
           'signType': payParam.signType,
           'paySign': payParam.paySign,
           'success': function (res) {
             wx.redirectTo({
-              url: '/pages/payResult/payResult?status=true',
+              url: '/pages/payResult/payResult?status=true&orderId=' + that.data.orderId,
             })
           },
           'fail': function (res) {
             wx.redirectTo({
-              url: '/pages/payResult/payResult?status=false',
+              url: '/pages/payResult/payResult?status=false&orderId=' + that.data.orderId,
             })
           }
         })
