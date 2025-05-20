@@ -10,7 +10,7 @@
 
 本项目需要配合NideShop商城服务端使用，GitHub: [https://github.com/tumobi/nideshop](https://github.com/tumobi/nideshop)
 
-[云服务器ECS-云主机优惠-2折上云](https://promotion.aliyun.com/ntms/act/qwbk.html?userCode=3grpysgf)
+[云服务器ECS-云主机优惠-2折上云](https://www.aliyun.com/daily-act/ecs/activity_selection?userCode=3grpysgf)
 
 ### 项目截图
 
